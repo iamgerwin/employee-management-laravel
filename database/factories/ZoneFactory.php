@@ -10,10 +10,10 @@ class ZoneFactory extends Factory
 {
     protected $model = Zone::class;
 
-    public function definition(): array
+    public function definition()
     {
         return [
-            'name' => $this->faker->citySuffix(),
+            'name' => $this->faker->city,
             'city_id' => City::factory(),
         ];
     }

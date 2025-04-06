@@ -10,10 +10,10 @@ class CityFactory extends Factory
 {
     protected $model = City::class;
 
-    public function definition(): array
+    public function definition()
     {
         return [
-            'name' => $this->faker->city(),
+            'name' => $this->faker->city,
             'state_id' => State::factory(),
         ];
     }

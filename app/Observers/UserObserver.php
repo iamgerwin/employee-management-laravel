@@ -14,7 +14,7 @@ class UserObserver
     public function creating(User $user): void
     {
         $user->id = (string) Str::uuid();
-        $this->hashPassword($user);
+        // $this->hashPassword($user);
     }
 
     /**

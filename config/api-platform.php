@@ -16,8 +16,8 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 
 return [
-    'title' => 'API Platform',
-    'description' => 'My awesome API',
+    'title' => 'Employee Management API',
+    'description' => 'API for managing employees',
     'version' => '1.0.0',
     'show_webby' => true,
 
@@ -33,7 +33,7 @@ return [
 
     'formats' => [
         'jsonld' => ['application/ld+json'],
-        // 'jsonapi' => ['application/vnd.api+json'],
+        'json' => ['application/json'],
         // 'csv' => ['text/csv'],
     ],
 
@@ -42,8 +42,6 @@ return [
     ],
 
     'docs_formats' => [
-        'jsonld' => ['application/ld+json'],
-        // 'jsonapi' => ['application/vnd.api+json'],
         'jsonopenapi' => ['application/vnd.openapi+json'],
         'html' => ['text/html'],
     ],
@@ -62,6 +60,8 @@ return [
         'pagination_maximum_items_per_page' => 30,
         'route_prefix' => '/api',
         'middleware' => [],
+        'version' => '1',
+        'stateless' => true,
     ],
 
     'pagination' => [
@@ -127,9 +127,22 @@ return [
         // ]
     ],
 
+    'docs' => [
+        'enabled' => true,
+        'title' => 'Employee Management API',
+        'description' => 'API documentation for Employee Management System',
+        'version' => '1.0.0',
+        'contact' => [
+            'name' => 'API Support',
+            'email' => 'support@example.com',
+        ],
+    ],
+
     // 'openapi' => [
     //     'tags' => []
     // ],
+
+    'versioning' => true,
 
     'url_generation_strategy' => UrlGeneratorInterface::ABS_PATH,
 
